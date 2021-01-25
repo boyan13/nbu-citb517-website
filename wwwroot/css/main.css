@@ -1,0 +1,544 @@
+body {
+    /*background: #556b2f;*/
+    background: #616161;
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+p {
+    padding: 0px 10px;
+}
+ul {
+    padding: 0;
+}
+
+/* ============================================== */
+/* =============== HEADER WRAPPER =============== */
+#header_wrapper {
+    /* look */
+    background: #a8a8a8;
+    background: linear-gradient(150deg, rgba(223,223,223,1) 0%, rgba(175,175,175,1) 100%);
+    border-left: 5px solid #a09885;
+    border-right: 5px solid #a09885;
+    overflow: auto;
+    /* size */
+    max-width: 960px;
+    height: 60px;
+    padding: 10px;
+    margin: 0px auto 25px auto;
+}
+#header {
+    /* look */
+    border-bottom: 3px solid #7c7063;
+    overflow: hidden;
+    /* size */
+    width: 100%;
+    height: calc(100% - 5px);
+    /* pos */
+    display: flex;
+    flex-direction: row;
+}
+#header_logo {
+    /* size */
+    width: auto;
+    height: 100%;
+    padding: 0px;
+    /* pos */
+    flex: 1;
+}
+#header_logo img {
+    /* size */
+    width: auto;
+    height: 100%;
+}
+#header_text_wrapper {
+    /* look */
+    white-space: nowrap;
+    overflow: hidden;
+    /* size */
+    min-width: 500px;
+    /* pos */
+    text-align: center;
+    flex: 1;
+}
+#header_text_wrapper h1 {
+    /* size */
+    padding-top: 6px;
+    margin: 0px;
+}
+#header_socials {
+    /* size */
+    width: auto;
+    height: auto;
+    margin: 0px;
+    /* pos */
+    flex: 1;
+}
+#header_socials ul {
+    /* size */
+    width: auto;
+    height: 100%;
+    margin: 0px;
+}
+#header_socials ul li{
+    /* look */
+    list-style: none;
+    /* size */
+    padding-top: 10px;
+    padding-right: 12px;
+    width: 40px;
+    /* pos */
+    float: right;
+}
+
+#header_socials ul li img {
+    width: 100%;
+    height: auto;
+}
+
+/* =============================================== */
+/* =============== SIDEBAR WRAPPER =============== */
+#sidebar_wrapper {
+    /* look */
+    background: #a8a8a8;
+    background: linear-gradient(150deg, rgba(223,223,223,1) 0%, rgba(175,175,175,1) 100%);
+    border-top: 5px solid #a09885;
+    border-bottom: 5px solid #a09885;
+    overflow: hidden;
+    /* size */
+    width: 120px;
+    height: auto;
+    padding: 10px;
+    margin: auto 25px auto 0px;
+    /* pos */
+    position: fixed;
+}
+#sidebar {
+    /* look */
+    border-right: 3px solid #7c7063;
+    /* size */
+    width: calc(100% - 5px);
+    height: 100%;
+}
+#sidebar_menu {
+    /* size */
+    width: 100%;
+    height: 100%;
+}
+#sidebar_menu ul {
+    /* size */
+    width: auto;
+    height: 100%;
+    padding: 0px;
+    padding-right: 10px;
+    margin: 0px;
+}
+#sidebar_menu ul li {
+    /* look */
+    list-style: none;
+    margin: 10px 0px;
+}
+#sidebar_menu ul li div {
+    /* look */
+    text-align: right;
+    /* size */
+    padding: 5px;
+}
+#sidebar_menu ul li a {
+    /* look */
+    text-decoration: none;
+    color: #202020;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    /* size */
+    width: 100%;
+    height: 100%;
+}
+#sidebar_menu ul li a:hover {
+    /* look */
+    color: #404040;
+}
+#logout_btn {
+    color: rgb(100, 118, 182) !important;
+}
+
+/* =============================================== */
+/* =============== CONTENT WRAPPER =============== */
+#content_wrapper {
+    /* look */
+    background: #a8a8a8;
+    background: linear-gradient(150deg, rgba(223,223,223,1) 0%, rgba(175,175,175,1) 100%);
+    border-top: 15px solid #a09885;
+    border-bottom: 15px solid #a09885;
+    /* size */
+    max-width: 960px;
+    min-width: 200px;
+    height: 100%;
+    padding: 20px;
+    margin: 0px auto 150px auto;
+}
+#aboutme_photo {
+    max-width: 300px;
+    float: right;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+#gallery_container {
+    width: 100%;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #888888;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div.gallery {
+    background: #ddd;
+    margin: 5px;
+    border: 1px solid #ccc;
+    display:inline-block;
+    width: 300px;
+}
+div.gallery:hover {
+    border: 1px solid #777;
+}
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+#skills {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+}
+div.skills {
+    text-align: center;
+}
+div.skills span {
+    text-align: left;
+}
+div.skills h3 {
+    color: #3F5F5F;
+}
+#skills_languages {
+    color: #595959;
+}
+#skills_tools {
+    color: #595959;
+}
+#skills_experience {
+    color: #595959;
+}
+
+/* =============================================== */
+/* =============== COMMENTS WRAPPER =============== */
+#comments_wrapper {
+    /* look */
+    background: #a8a8a8;
+    background: linear-gradient(150deg, rgba(223,223,223,1) 0%, rgba(175,175,175,1) 100%);
+    border-top: 15px solid #a09885;
+    overflow: auto;
+    /* size */
+    max-width: 770px;
+    height: auto;
+    min-height: 60px;
+    padding: 10px;
+    margin: 0px auto;
+}
+#comments {
+    /* look */
+    border-top: 3px solid #7c7063;
+    overflow: hidden;
+    /* size */
+    width: 100%;
+    height: calc(100% - 5px);
+}
+form {
+    margin-top: 15px;
+    text-align: left;
+}
+label {
+    display: block;
+}
+textarea {
+    resize: none;
+    margin: 3px;
+    width: 100%;
+    background-color: white;
+    font-size: 18px;
+    display: block;
+}
+#comments_container {
+    white-space: normal;
+}
+.datetime {
+    font-size: 12px;
+    color: gray;
+}
+.fake_form
+{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    white-space: nowrap;
+}
+.fake {
+    display: none;
+    white-space: nowrap;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* RESPONSIVE */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+@media screen and (min-width: 2800px) {
+
+    #content_wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 2400px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+
+    #content_wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 1300px;
+    }
+    div.gallery {
+        width: 600px;
+    }
+    #comments_wrapper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 1352px) {
+    #header_text_wrapper {
+        padding-top: 9px;
+        min-width: 400px;
+        font-size: 11px;
+    }
+    #content_wrapper {
+        margin-left: 170px;
+        margin-right: 25px;
+        max-width: 750px;
+        /* shrink menu with js */
+    }
+    #aboutme_photo {
+        max-width: 200px;
+    }
+    #comments_wrapper {
+        margin: 0px 25px 0px 170px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    h3 {
+        font-size: 12px;
+    }
+    p, label {
+        font-size: 14px;
+    }
+    li {
+        font-size: 11px;
+    }
+    #header_wrapper {
+        background-attachment: fixed; /* for seemless gradient across the menu */
+        height: 30px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    #header {
+        border-bottom: none;
+    }
+    #header_logo {
+        padding-top: 5px;
+    }
+    #header_text_wrapper {
+        padding-top: 0px;
+        font-size: 8px;
+        min-width: 250px;
+    }
+    #header_socials ul li {
+        padding: 5px 10px 0px 0px;
+        width: 20px;
+    }
+    #sidebar_wrapper {
+        background-attachment: fixed; /* for seemless gradient across the header */
+        /* size */
+        width: calc(100% - 30px);
+        height: auto;
+        padding: 10px;
+        margin: 0px 0px 25px 0px;
+        border-top: none;
+        border-left: 5px solid #a09885;
+        border-right: 5px solid #a09885;
+        /* pos */
+        position: relative;
+    }
+    #sidebar {
+        /* look */
+        border-right: none;
+        border-bottom: 3px solid #7c7063;
+
+        /* size */
+        width: 100%;
+        height: calc(100% - 5px);
+    }
+    #sidebar_menu {
+        /* size */
+        width: 100%;
+        height: 20px;
+    }
+    #sidebar_menu ul {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    #sidebar_menu ul li {
+        margin: 0;
+    }
+    #sidebar_menu ul li div {
+        padding: 0px;
+    }
+    #sidebar_menu ul li a {
+        /* look */
+        text-decoration: none;
+        font-size: 16px;
+        /* size */
+        width: 100%;
+        height: 100%;
+    }
+    #sidebar_menu ul li a:hover {
+        /* look */
+        color: #404040;
+    }
+    #content_wrapper {
+        margin-left: 25px;
+        margin-bottom: 25px;
+        max-width: 100%;
+    }
+    #aboutme_photo {
+        max-width: 140px;
+    }
+    #gallery_container {
+        max-height: 400px;
+    }
+    div.gallery {
+        width: 160px;
+    }
+    div.desc {
+        font-size: 12px;
+    }
+    #skills {
+        width: 90%;
+    }
+    #comments_wrapper {
+        margin: 0 auto;
+    }
+    #comment_box {
+        font-size: 14px;
+    }
+    #datetime {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 18pt;
+    } 
+    h3 {
+        font-size: 10px;
+    }
+    p, label {
+        font-size: 13px;
+    }
+    li {
+        font-size: 9px;
+    }
+    #header_logo {
+        display:none;
+    }
+    #header_text_wrapper {
+        margin-left: 20px;
+        min-width: 200px;
+        width: 120px;
+        max-width: 120px;
+        font-size: 7px;
+    }
+    #header_socials ul li {
+        padding-top: 5px;
+    }
+    #sidebar_menu ul li a {
+        font-size: 11px;
+    }
+    #aboutme_photo {
+        max-width: 120px;
+    }
+    #gallery_container {
+        max-height: 200px;
+        align-items: flex-start;
+    }
+    div.gallery {
+        width: 80px;
+    }
+    div.gallery a img {
+        display: block;
+    }
+    div.desc {
+        display: none;
+    }
+    #skills {
+        width: 90%;
+    }
+    #skills ul {
+        list-style: none;
+    }
+    #skills div h3 {
+        font-size: 10px;
+        max-width: 60px;
+        margin: 0px auto;
+    }
+    #skills div span ul li{
+        max-width: 50px;   
+    }
+    #comment_box {
+        font-size: 11px;
+    }
+    .datetime {
+        font-size: 8px;
+    }
+}

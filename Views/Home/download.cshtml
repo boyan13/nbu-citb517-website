@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+    var img = @Url.Content("~" + "/img/gallery/gallery" + ViewBag.id + ".jpg");
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Boyan Bonev</title>
+    <style>
+        body {
+            background: #a8a8a8;
+            background: linear-gradient(150deg, rgba(223,223,223,1) 0%, rgba(175,175,175,1) 100%);
+            background-attachment: fixed;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 1080px;
+            height: auto;
+        }
+
+        #download {
+            border: 1px solid #ccc;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+            background-color: white;
+            padding-top: 5px;
+            margin: 15px;
+            position: fixed;
+            width: 150px;
+            height: 30px;
+        }
+
+        #download:hover {
+            border-color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <a id="download" target="_self" href="@img" download>Download</a>
+    <img id="image" style="display: block;" src="@img" />
+    @*<img id="image" style="display: block;" src="~/img/gallery/gallery1.jpg" />*@
+    @*<script src=".\js\setupDownload.js"></script>*@
+</body>
+
+</html>

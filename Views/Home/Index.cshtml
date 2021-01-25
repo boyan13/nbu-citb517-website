@@ -1,0 +1,221 @@
+﻿@model CITB517_WebApplication.Models.HomeViewModel
+@using Microsoft.AspNetCore.Identity
+@using CITB517_WebApplication.Data.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@{
+    var userId = UserManager.GetUserId(User);
+    var userData = UserManager.FindByIdAsync(userId).Result;
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <meta charset="utf-8" />
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header_wrapper">
+        <div id="header">
+            <div id="header_logo">
+                <img src="~/img/logos/MountainsClipart.png" alt="Clipart" title="Mountains Clipart" />
+            </div>
+            <div id="header_text_wrapper">
+                <h1>Boyan Bonev - Epic Developer</h1>
+            </div>
+            <div id="header_socials">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/boyan_bonev/?hl=en">
+                            <img src="~/img/icons/Instagram icon.svg" width="40" height="40" alt="instagram" title="instagram" />
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://github.com/boyan13">
+                            <img src="~/img/icons/GitHub icon.svg" width="40" height="40" alt="instagram" title="instagram" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End of Header -->
+    <!-- Sidebar -->
+    <div id="sidebar_wrapper">
+        <div id="sidebar">
+            <div id="sidebar_menu">
+                <ul>
+                    <li><div><a href="#section_aboutme">About me</a></div></li>
+                    <li><div><a href="#section_gallery">Gallery</a></div></li>
+                    <li><div><a href="#section_goals">Goals</a></div></li>
+                    <li><div><a href="#section_skills">Skills</a></div></li>
+                    <li><div><a id="logout_btn" asp-controller="User" asp-action="Logout">Logout</a></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content_wrapper">
+        <a name="section_aboutme"><h2>About Me</h2></a>
+        <hr>
+        <div id="aboutme_wrapper">
+            <img id="aboutme_photo" src="~/img/other/photo.jpg" alt="Me" />
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan id arcu et laoreet. Sed neque dolor, imperdiet sit amet malesuada eu, fringilla vitae purus. Pellentesque at malesuada lectus. Sed lectus tellus, luctus sed facilisis sed, ullamcorper quis libero. Cras sodales aliquet justo quis dictum. Maecenas vulputate maximus neque id condimentum. Nulla tempor vulputate enim sit amet gravida. Nunc et leo feugiat, molestie justo eget, lobortis quam. Mauris finibus nisl quam.<p>
+            <p>Nunc facilisis arcu eu turpis pretium, in rutrum nisl pellentesque. Suspendisse lobortis nunc dolor, et accumsan magna vestibulum sed. Aenean pretium nibh vitae orci bibendum, quis mollis tortor pretium. Proin eu mi vel nunc bibendum pellentesque a eu velit. Morbi porttitor enim in sodales ultricies. Donec id augue non odio venenatis molestie ac vel quam. Curabitur egestas placerat magna at posuere. Ut velit libero, efficitur ut pretium et, molestie at felis. In quis aliquet ex. Proin condimentum tincidunt nunc ac vestibulum.<p>
+            <p>Ut finibus in nisi in lobortis. Donec non aliquet nisl. Ut consequat lorem vel nunc facilisis, porttitor euismod purus blandit. Donec id leo eu ex ornare ullamcorper. Praesent finibus, libero sit amet ullamcorper pretium, urna ante ultrices tortor, eu sollicitudin lectus sem eu diam. Sed luctus eros eget arcu convallis commodo. Vestibulum dapibus augue justo, sed ornare ipsum volutpat sit amet. Fusce non erat tellus. Etiam eget ligula non massa ullamcorper iaculis. Maecenas rutrum interdum ultricies. Quisque sit amet sem sem. Duis iaculis imperdiet orci, quis tempus dui ullamcorper imperdiet. Etiam faucibus risus et libero interdum, sit amet iaculis arcu mattis. Suspendisse sit amet leo justo.</p>
+        </div>
+        <br>
+
+        <a name="section_gallery"><h2>Gallery</h2></a>
+        <hr>
+        <div id="gallery_container">
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="1">
+                    <img src="~/img/gallery/gallery1.jpg" alt="Plants" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="2">
+                    <img src="~/img/gallery/gallery2.jpg" alt="Metropolis" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="3">
+                    <img src="~/img/gallery/gallery3.jpg" alt="Eastern European Dome" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="4">
+                    <img src="~/img/gallery/gallery4.jpg" alt="Coffee with Bisquits" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="5">
+                    <img src="~/img/gallery/gallery5.jpg" alt="Airplane" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="6">
+                    <img src="~/img/gallery/gallery6.jpg" alt="Surveillance" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="7">
+                    <img src="~/img/gallery/gallery7.jpg" alt="Twin Observatories" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" asp-controller="Home" asp-action="Download" asp-route-id="8">
+                    <img src="~/img/gallery/gallery8.jpg" alt="Mosque" />
+                </a>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim lacus nec efficitur dapibus. Fusce mattis sem quis neque venenatis, ut luctus leo pretium. In hac habitasse platea dictumst.</div>
+            </div>
+        </div>
+        <br>
+
+        <a name="section_goals"><h2>Goals</h2></a>
+        <hr>
+        <div id="goals_wrapper">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan id arcu et laoreet. Sed neque dolor, imperdiet sit amet malesuada eu, fringilla vitae purus. Pellentesque at malesuada lectus. Sed lectus tellus, luctus sed facilisis sed, ullamcorper quis libero. Cras sodales aliquet justo quis dictum. Maecenas vulputate maximus neque id condimentum. Nulla tempor vulputate enim sit amet gravida. Nunc et leo feugiat, molestie justo eget, lobortis quam. Mauris finibus nisl quam.</p>
+        </div>
+        <br>
+
+        <a name="section_skills"><h2>Skills</h2></a>
+        <hr>
+        <div id="skills">
+            <div class="skills" id="skills_languages">
+                <h3>Languages</h3>
+                <span>
+                    <ul>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>SQLite, SQL, SPARQL</li>
+                        <li>JavaScript</li>
+                        <li>C#</li>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="skills" id="skills_tools">
+                <h3>Tools</h3>
+                <span>
+                    <ul>
+                        <li>GNU toolchain</li>
+                        <li> Java Development Kit</li>
+                        <li> Sublime TE </li>
+                        <li> VS Code </li>
+                        <li> Visual Studio </li>
+                        <li> PyCharm </li>
+                        <li> IntelliJ IDEA </li>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="skills" id="skills_experience">
+                <h3>Experience With</h3>
+                <span>
+                    <ul>
+                        <li>Databases and ORM</li>
+                        <li>HTML, CSS</li>
+                        <li>GitHub and Git</li>
+                        <li>Unit Testing and TDD</li>
+                        <li>Continuous Integration</li>
+                        <li>Linux OS</li>
+                        <li>Qt</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <br>
+    </div>
+    <!-- End of Content Wrapper -->
+    <!-- Comments -->
+    <div id="comments_wrapper">
+        <div id="comments">
+            <form id="comment_form" asp-controller="Comments" asp-action="Create">
+                <input value="@userData.UserName" hidden asp-for="Create.UserName" />
+                <label for="comment_box">Leave a comment!</label>
+                <textarea id="comment_box" rows="3" asp-for="Create.Text"></textarea>
+            </form>
+            <button id="post_btn">Post</button>
+            <div id="comments_container">
+                @foreach (var comment in Model.Comments) {
+                    <p><span class="datetime">@comment.Date</span><br>@comment.UserName<br>@comment.Text</p>
+                    <form class="fake_form" asp-controller="Comments" asp-action="Delete">
+                        <input class="fake" name="id" value="@comment.Id" />
+                        <input class="fake" value="@userData.UserName" name="userId" />
+                        <button>Delete</button>
+                    </form>
+                    <hr>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- End of Comments -->
+
+    <script type="text/javascript" src="~/js/comment.js"></script>
+</body>
+
+</html>
