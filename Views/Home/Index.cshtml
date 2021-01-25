@@ -202,7 +202,7 @@
             <button id="post_btn">Post</button>
             <div id="comments_container">
                 @foreach (var comment in Model.Comments) {
-                    <p><span class="datetime">@comment.Date</span><br>@comment.UserName<br>@comment.Text</p>
+                    <p><span class="datetime">@comment.Date</span><br><span class="username">@comment.UserName</span><br>@comment.Text</p>
                     <form class="fake_form" asp-controller="Comments" asp-action="Delete">
                         <input class="fake" name="id" value="@comment.Id" />
                         <input class="fake" value="@userData.UserName" name="userId" />
